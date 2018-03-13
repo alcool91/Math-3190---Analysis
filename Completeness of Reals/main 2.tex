@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Completeness}
+\author{Allen Williams }
+\date{October 24th 2017}
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{scrextend}
+\newtheorem*{Theorem}{Theorem}
+\newtheorem*{Axiom}{Axiom}
+\newtheorem*{Problem}{Problem}
+\renewcommand\qedsymbol{QED}
+
+\begin{document}
+
+\maketitle
+
+\begin{Problem}
+    1. $\{\frac{1}{n}\mid n\in\mathbb{N} \}$ \\
+    \begin{addmargin}[2em]{}
+    Give 3 upper bounds for this set: 1, 2, 3 \\
+    Give 3 lower bounds for this set: 0, -1, -2 \\
+    Maximum: 1 \\
+    Minimum: No Minimum \\
+    Supremum: 1 \\
+    Infimum: 0 \\
+    \end{addmargin}
+\end{Problem}
+
+\begin{Problem}
+    2. If $A,B \subset \mathbb{R}$ and we define $C=A+B=\{a+b\mid a\in A, b\in B \}$ then if A and B have suprema, then C has a supremum and $\sup C=\sup A+\sup B$
+    \begin{proof}
+        let $a_0$ and $b_0$ denote $\sup A$ and $\sup B$ Then for all $a \in A$, $a \leq a_0$ and for all $b \in B$, $b\leq b_0$.  An arbitrary element in $C$ can be written $a+b$ for some $a \in A$ and $b \in B$.  Since $a\leq a_0$ for all $a \in A$ and $b\leq b_0$ for all $b \in B$, $a+b\leq a_0+b_0$ for all $a\in A$ and $b\in B$ and $a_0 + b_0$ is an upper bound for the set $C$.\\
+        To show that $a_0 + b_0$ is the least upper bound for $C$, recall that if $a_0 + b_0$ is the least upper bound for $C$ then for all $\epsilon >0$ there exists an element $c\in C$ such that $a_0+b_0-\epsilon <c$, that is for some $a\in A$ and $b\in B$, $a_0+b_0<a+b+\epsilon$, for all $\epsilon >0$.  Fix $\epsilon >0$ and rewrite as $a_0+b_0<(a+\frac{\epsilon}{2})+(b+\frac{\epsilon}{2})$.  It must be shown that there exist $a\in A$ and $b\in B$ for which this is true.  Since $a_0=\sup A$ then for all $\epsilon_1 >0$ there exists an $a\in A$ such that $a+\epsilon_1 >a_0$.  Take $\epsilon_1=\frac{\epsilon}{2}$, which is justified since if $\epsilon >0$ then $\frac{\epsilon}{2} >0$. Then there exists an $a\in A$ such that  $a+\frac{\epsilon}{2}>a_0$.  Also since $b_0=\sup B$, for all $\epsilon_2 >0$ there exists a $b\in B$ such that $b+\epsilon_2>b_0$.  Take $\epsilon_2=\frac{\epsilon}{2}$, then there exists a $b\in B$ such that $b+\frac{\epsilon}{2}>b_0$.  Taking $a$ and $b$ to be these values it is clear that there exist an $a\in A$ and $b\in B$ such that $a_0+b_0<(a+\frac{\epsilon}{2})+(b+\frac{\epsilon}{2})$.  Rewriting the right side and recalling that $a+b$ was an element $c\in C$, we see that $a_0+b_0<c+\epsilon$ for some $c\in C$.  Since $\epsilon$ was arbitrary the result holds for all $\epsilon>0$ proving that $a_0+b_0=\sup C$, that is $\sup A+\sup B=\sup C$.
+    \end{proof}
+\end{Problem}
+
+\begin{Problem}
+    3. Let $m\in \mathbb{R}$ be a lower bound for a set $S\subset \mathbb{R}$.  Then $m$ is the greatest lower bound if and only if for all $\epsilon >0$ there exists an $s\in S$ such that $m+\epsilon>s$.
+    \begin{proof}
+    First to show that if $m$ is a lower bound for $S$ and for all $\epsilon >0$ there exists an $s\in S$ such that $m+\epsilon>s$, then $m$ is the greatest lower bound for $S$, let $m$ be a lower bound for $S$ with that property.  Now let $n$ be another lower bound for $S$ and assume for contradiction that $n>m$.  Chose $\epsilon =n-m$.  Since $n>m$, $n-m>0$ and there exists an $s\in S$ such that $n>s$.  Then $n$ cannot be a lower bound for $S$ which contradicts our assumption that it was.  Then if $n$ is another lower bound for $S$, $n$ must be less than or equal to $m$, that is, $m$ is the greatest lower bound for $S$. \\ \\
+    To prove the other direction it must be shown that if $m$ is the greatest lower bound for $S$ then for all $\epsilon > 0$ there exists an $s\in S$ such that $m+\epsilon >s$.  Let $m$ be the greatest lower bound for $S$ and fix $\epsilon >0$.  Since $\epsilon>0$ and $m$ is the greatest lower bound for $S$, $m+\epsilon$ cannot be a lower bound for $S$.  Then it is false that for all $s\in S$, $s\geq m+\epsilon$, so there exists an $s\in S$ such that $m+\epsilon >s$.  Since $\epsilon$ was arbitrary that result holds for all $\epsilon >0$.
+    \end{proof}
+\end{Problem}
+\begin{Problem}
+    4. The statements "For all $r\in \mathbb{R}$ there exists an $n\in \mathbb{N}$ such that $n>r$" and "For all $a>0$ in $\mathbb{R}$ and $b \in \mathbb{R}$, there exists an $n\in \mathbb{N}$ such that $na>b$" are equivalent.
+    \begin{proof}
+    To show that the first statement implies the second observe that any real number $r$ can be written as $r\cdot a\cdot \frac{1}{a}$ for any $a>0$.  Then for all $r\in \mathbb{R}$ and $a>0$ there exists an $n\in \mathbb{N}$ such that $na>ra$.  Since the product of two real numbers is a real number and every real number can be expressed as the product of two real numbers, in other words $ra$ is a real number whenever $r$ is real and $a$ is real and greater than 0, and there is no real number which cannot be expressed in this form.  Then it is justifiable to let $b=ra$ and say for all $b\in \mathbb{R}$ and $a>0$ in $\mathbb{R}$ there exists an $n\in \mathbb{N}$ such that $na>b$ as required. \\ \\
+    To prove the other direction fix $a>0$ and $b\in \mathbb{R}$.  Since there exists an $n\in \mathbb{N}$ such that $na>b$, let $n$ be that particular $n$.  Then $n>\frac{b}{a}$.  The sets $\{\frac{b}{a}\mid b\in \mathbb{R},a>0\}$ and $\{r\mid r\in \mathbb{R}\}$ are exactly equal so every $\frac{b}{a}$ corresponds to exactly one $r$ and there are no $r\in \mathbb{R}$ that cannot be written $\frac{b}{a}$ for some $b\in \mathbb{R}$ and $a>0$.  So for all $r\in \mathbb{R}$ there exists an $n\in \mathbb{N}$ such that $n>r$.
+    \end{proof}
+\end{Problem}
+\end{document}

@@ -1,0 +1,58 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Limit Theorems}
+\author{Allen Williams }
+\date{November 15 2017}
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{scrextend}
+\newtheorem*{Theorem}{Theorem}
+\newtheorem*{Axiom}{Axiom}
+\newtheorem*{Problem}{Problem}
+\renewcommand\qedsymbol{QED}
+
+\binoppenalty=\maxdimen
+\relpenalty=\maxdimen
+
+\begin{document}
+
+\maketitle
+
+\begin{Problem}
+ 53. $s_n=(-1)^n$ is an example of a bounded sequence which does not converge
+\end{Problem}
+
+\begin{Problem}
+  Let $\lim_{n\to\infty}a_n=a$. If $a_n>0$ for all $n\in\mathbb{N}$ then $a\geq 0$.
+  \begin{proof}
+  Since $\lim_{n\to\infty}a_n=a$, then for all $\epsilon>0$ there exists an $n\in\mathbb{N}$ such that $\lvert a_n-a\rvert<\epsilon$.  Assume for contradiction that $a<0$, then $\lvert a_n-a\rvert > a_n \geq0$, so $a_n-a<\epsilon$ for all $\epsilon>0$.  Since $a_n\geq0$ consider $\epsilon=a_n+\epsilon_1$ where $\epsilon_1>0$.  Then there exists an $n\in\mathbb{N}$ such that $a_n-a<a_n+\epsilon_1$ or $a>-\epsilon_1$.  Since $a>-\epsilon_1$ it must be true that $a\geq0$.  But $a<0$ by assumption which is contradictory and it must be true that $a\geq 0$.
+  \end{proof}
+\end{Problem}
+\begin{Problem}
+   If there exists a $c\in\mathbb{R}$ for which $c\leq b_n$ for all $n\in\mathbb{N}$ then $c\leq b$.  Similarly if $a_n\leq c$ for all $n\in\mathbb{N}$ then $a\leq c$.
+   \begin{proof}
+   Since $\lim_{n\to\infty}b_n=b$ then for all $\epsilon>0$ there exists an $N\in\mathbb{N}$ such that for $n>N$ $\lvert b_n-b\rvert<\epsilon$.  Then $-\epsilon<b_n-b<\epsilon$, meaning $c\leq b_n<\epsilon+b$, so we have $c<b+\epsilon$ for all $\epsilon>0$.  Now assume for contradiction $c>b$ and consider $\epsilon = c-b$.  Then $c<c$ which is absurd so it must be true that $c\leq b$.
+   \end{proof}
+   \begin{proof}
+   Since $\lim_{n\to\infty}a_n=a$ then for all $\epsilon>0$ there exists an $N\in\mathbb{N}$ such that for $n>N$ $\lvert a_n-a\rvert<\epsilon$.  Then $-\epsilon<b_n-b<\epsilon$, meaning $-\epsilon+a<a_n\leq c$.  So we have $-\epsilon +a<c$ for all $\epsilon>0$.  Now assume $c<a$ for contradiction and consider $\epsilon=a-c$.  Then we have $c<c$ which is absurd so it must be true that $a\leq c$
+   \end{proof}
+\end{Problem}
+
+\begin{Problem}
+   53 a) If $x_n=(-1)^n$ and $y_n=(-1)^{n+1}$ then both $x_n$ and $y_n$ diverge but $x_n+y_n$ converges.
+\end{Problem}
+\begin{Problem}
+   53 b) If $x_n=(-1)^n$ and $y_n=\frac{1}{n}$ then $x_n$ diverges and $y_n$ converges but $x_n+y_n$ converges.
+\end{Problem}
+\begin{Problem}
+   53 c) If $b_n=\frac{1}{n}$ then $b_n\neq 0$ for all $n$ and $\frac{1}{b_n}=n$ which diverges to infinity.
+\end{Problem}
+\begin{Problem}
+   53 d) There are no sequences $a_n$ and $b_n$ such that $a_n$ is unbounded, $b_n$ is convergent, and $a_n-b_n$ is bounded.  Since $b_n$ is convergent it is also bounded.  let $B_1$   be an upper bound for $b_n$ and $B_2$ be an upper bound for $a_n-b_n$ then $B-1+B_2$ is an upper bound for $a_n-b_n+b_n=a_n$.  Similarly let $c_1$ be a lower bound for $b_n$ and $c_2$ be a lower bound for $a_n-b_n$ then $c_2 + c_1$ is a lower bound for $a_n$ implying $a_n$ is bounded.
+\end{Problem}
+\begin{Problem}
+    If $a_n=\frac{1}{n^2}$ and $b_n=n$ then $a_n b_n = \frac{1}{n}$ which converges, $a_n $ also converges, but $b_n$ does not converge.
+\end{Problem}
+\end{document}

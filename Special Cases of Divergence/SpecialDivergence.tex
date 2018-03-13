@@ -1,0 +1,50 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Two Special Cases of Divergence}
+\author{Allen Williams }
+\date{November 27 2017}
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{scrextend}
+\newtheorem*{Theorem}{Theorem}
+\newtheorem*{Axiom}{Axiom}
+\newtheorem*{Problem}{Problem}
+\renewcommand\qedsymbol{QED}
+
+\binoppenalty=\maxdimen
+\relpenalty=\maxdimen
+
+\begin{document}
+
+\maketitle
+
+\begin{Problem}
+   $\lim_{n\to\infty}n^2=+\infty$
+   \begin{proof}
+   Recall that if for all $M>0$ there exists a number $N$ for which $n>N$ implies $s_n>M$ then $\lim_{n\to\infty}s_n=+\infty$.  Consider $s_n=n^2$.  Fix $M>0$ and let $N=\sqrt{M}$ then $n>M$ means $n>\sqrt{M}$, so $n^2>M$.  So for all $M>0$ there exists a number $N$ for which $n>N$ implies $n^2>M$ meaning $\lim_{n\to\infty}n^2=+\infty$.
+   \end{proof}
+\end{Problem}
+
+\begin{Problem}
+   Suppose there exists an $N_0$ such that $s_n\leq t_n$ for all $n>N_0$.  If $\lim_{n\to\infty}s_n=+\infty$ then $\lim_{n\to\infty}t_n=+\infty$.
+   \begin{proof}
+   Since $\lim_{n\to\infty}=+\infty$, for all $M>0$ there exists a number $N_1$ such that $n>N_1$ implies $s_n>M$.  further, there exists a number $N_0$ such that for $n>N_0$, $s_n \leq t_n$.  Then for $n>max\{N_0, N_1\}$ $t_n\geq s_n>M$ implying that $t_n>M$.  So since there exists an $N$ such that $n>N$ implies $t_n>M$, $\lim_{n\to\infty}t_n=+\infty$.
+   \end{proof}
+\end{Problem}
+
+\begin{Problem}
+   If $\lim_{n\to\infty}s_n=+\infty$ and $k<0$ then $\lim_{n\to\infty}ks_n=-\infty$.
+   \begin{proof}
+   Since $\lim_{n\to\infty}s_n=+\infty$, for all $M>0$ there exists an $N$ such that $n>N$ implies $s_n>-\frac{M}{k}$ (since $k<0$ and $M>0$, $-\frac{M}{k}>0$)  Then $ks_n<-M$.  Since $M$ was arbitrary and positive, $-M$ is arbitrary and negative.  Call it $M_1$.  So for all $M_1<0$ there exists an $N$ such that $n>N$ implies $ks_n<M_1$ meaning $\lim_{n\to\infty}ks_n=-\infty$.
+   \end{proof}
+\end{Problem}
+
+\begin{Problem}
+   If $\lim_{n\to\infty}s_n=+\infty$ and $\inf\{t_n\mid n\in\mathbb{N}\}>-\infty$, then \\ $\lim_{n\to\infty}(s_n+t_n)=+\infty$.
+   \begin{proof}
+   Since $\inf\{t_n\mid n\in\mathbb{N}\}>-\infty$ either $\inf\{t_n\mid n\in\mathbb{N}\}\in\mathbb{R}$ or \\ $\inf\{t_n\mid n\in\mathbb{N}\}=+\infty$.  Since $\{t_n\mid n\in\mathbb{N}\}$ contains at least one element, $\inf\{t_n\mid n\in\mathbb{N}\}\in\mathbb{R}$, let $l$ denote this element.  Since $\lim_{n\to\infty}s_n=+\infty$, for all $M+\lvert l\rvert>0$ there exists an $N_1$ such that $n>N_1$ implies $s_n>M+\lvert l\rvert$.  Then for $n>N_1$, $s_n+t_n>M+\lvert l\rvert+l\geq M$, so $\lim_{n\to\infty}(s_n+t_n)=+\infty$.
+   \end{proof}
+\end{Problem}
+\end{document}

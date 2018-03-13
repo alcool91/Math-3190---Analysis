@@ -1,0 +1,85 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Monotonic Convergence Theorem}
+\author{Allen Williams }
+\date{December 1 2017}
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{scrextend}
+\newtheorem*{Theorem}{Theorem}
+\newtheorem*{Axiom}{Axiom}
+\newtheorem*{Problem}{Problem}
+\renewcommand\qedsymbol{QED}
+
+\binoppenalty=\maxdimen
+\relpenalty=\maxdimen
+
+\begin{document}
+
+\maketitle
+\begin{Problem}
+Show that the sequence $x_1=3 $ and $x_{n+1}=\frac{1}{4-x_n}$ where $n\in\mathbb{N}$ converges and find its limit.\\
+It will first be shown that $0<x_n\leq3$, then that $x_n$ is monotonically decreasing proving that $x_n$ converges to a limit $s\in\mathbb{R}$.  The limit can then be computed using limit theorems for convergent sequences.\\
+The proof that $0<x_n\leq3$ is by induction.  Clearly $0<x_1=3\leq3$ establishing the basis of induction.  Assume $0<x_n\leq3$. $x_{n+1}=\frac{1}{4-x_n}$ and by the induction hypothesis $0<\frac{1}{4}\leq x_{n+1}\leq1<3$, so by induction $0<x_n\leq3$.\\
+The proof that $x_n$ is decreasing is also by induction.  The first two terms of the sequence, $x_1$ and $x_2$ are $3$ and $1$ respectively.  Clearly $x_2=1\leq x_1=3$, establishing the basis of induction.  Assume that $x_{n+1}\leq x_n$.  It must be shown that $x_{n+2}\leq x_{n+1}$. Observe that $x_{n+2}=\frac{1}{4-x_{n+1}}\leq\frac{1}{4-x_n}=x_{n+1}$ by the induction hypothesis since it was proved above that $x_n$ is bounded by $0$ and $3$.  So by induction $x_n$ is decreasing.\\
+Since $x_n$ is bounded and monotonic it converges to a limit $s\in\mathbb{R}$.  Since it is known that $x_{n+1}=\frac{1}{4-x_n}$, $\lim_{n\to\infty}x_{n+1}=\frac{1}{4-\lim_{n\to\infty}x_n}$.  Noting that $\lim_{n\to\infty}x_{n+1}=\lim_{n\to\infty}x_n$, we have 
+\begin{align*}
+   s&=\frac{1}{4-s} \\
+   4s-s^2&=1 \\
+   -s^2+4s-1&=0 \\
+   (s-2)^2&=3 \\
+   s&= 2\pm\sqrt{3} \\
+\end{align*}
+Since $2+\sqrt{3}>3$ and it was proved above that $x_n\leq 3$ for all $n$, $x_n$ must converge to the limit $2-\sqrt{3}$.
+\end{Problem}
+
+\begin{Problem}
+Show that the sequence $y_1=1$ and $y_{n+1}=4-\frac{1}{y_n}$ converges and find its limit. \\
+It will first be shown that $1\leq y_n<4$, then that $y_n$ is monotonically increasing proving that $y_n$ converges to a limit $s\in\mathbb{R}$.  The limit can then be computed using limit theorems for convergent sequences.\\
+The proof that $1\leq y_n<4$ is by induction.  Clearly $1\leq y_1=1<4$ establishing the basis of induction.  Assume $1\leq y_n<4$ then by the induction hypothesis $1<3\leq y_{n+1}\leq\frac{15}{4}<4$ so by induction $1\leq y_n<4$.\\
+The proof that $y_n$ is increasing is also by induction.  Clearly $y_2=3>y_1=1$ establishing the basis of induction.  Assume $y_{k+1}\geq y_k$ for some $k$, it must be shown that $y_{k+2}\geq y_{k+1}$.  $y_{k+2}=4-{1}{y_{k+1}}\geq 4-\frac{1}{y_k}=y_{k+1}$ by the induction hypothesis, so by induction $y_n$ is increasing. \\
+Since $y_n$ is bounded and monotonic, by the monotonic convergence theorem it converges to a limit $s\in\mathbb{R}$.  Since it is known that $y_{n+1}=4-\frac{1}{y_n}$ it must be true that $\lim_{n\to\infty}y_{n+1}=4-\frac{1}{\lim_{n\to\infty}y_n}$. So we have 
+\begin{align*}
+    s&=4-\frac{1}{s} \\
+    4-s&=\frac{1}{s} \\
+    4s-s^2-1&=0 \\
+    (s-2)^2 &=3 \\
+    s&=2\pm \sqrt{3} \\
+\end{align*}
+Since $2-\sqrt{3}<1$ and it was proved above that $1\leq y_n$ for all $n$, $y_n$ must converge to $2+\sqrt{3}$.
+\end{Problem}
+
+\begin{Probem}
+Show that the sequence $s_1=1$ and $s_{n+1}=\sqrt{2+7s_n}$ converges and find its limit. \\
+It will first be shown that $1\leq s_n<8$, then that $s_n$ is monotonically increasing proving that $s_n$ converges to a limit $s\in\mathbb{R}$.  The limit can then be computed using limit theorems for convergent sequences.\\
+The proof that $1\leq s_n<8$ is by induction.  Clearly $1\leq s_1=1<8$ establishing the basis of induction.  Assume $1\leq s_n<8$, then $1\leq 3\leq s_{n+1}\leq\sqrt{58}<8$, so by induction $1\leq s_n<8$. \\
+The proof that $s_n$ is monotonically increasing is also by induction.  Clearly $s_1=1<3=s_2$ establishing the basis of induction.  Assume $s_{n+1}\geq s_n$, it must be shown that $s_{n+2}\geq s_{n+1}$.  $s_{n+2}=\sqrt{2_7s_{n+1}}\geq\sqrt{2+7s_n}=s_{n+1}$ by the induction hypothesis, so by induction $s_n$ is increasing. \\
+Since $s_n$ is increasing and bounded, it converges to a limit $s\in\mathbb{R}$.  Since it is known that $s_{n+1}=\sqrt{2+7s_n}$, it must be true that $\lim_{n\to\infty}s_{n+1}=\sqrt{2=7\lim_{n\to\infty}s_n}$.  Then,
+\begin{align*}
+    s&=\sqrt{2+7s} \\
+    s^2-7s-s&=0 \\
+    (s-\frac{7}{2})^2-\frac{57}{4}&=0 \\
+    s&=\frac{7}{2}\pm \frac{\sqrt{57}}{2}
+\end{align*}
+Since $s_n$ cannot converge to $\frac{7}{2}-\frac{\sqrt{57}}{2}$ it must converge to $\frac{7}{2}+\frac{\sqrt{57}}{2}$
+\end{Probem}
+
+\begin{Problem}
+Show that $\sqrt{2}$, $\sqrt{2\sqrt{2}}$, $\sqrt{2\sqrt{2\sqrt{2}}}$... converges and find its limit. \\
+Note that this sequence can be defined recursively as the sequence $s_1=\sqrt{2}$ and $s_{n+1}=\sqrt{2s_n}$. \\
+It will first be shown that $\sqrt{2}\leq s_n<2$, then that $s_n$ is monotonically increasing proving that $s_n$ converges to a limit $s\in\mathbb{R}$.  The limit can then be computed using limit theorems for convergent sequences.\\
+The proof that $\sqrt{2}\leq s_n<2$ is by induction.  Clearly $\sqrt{2}\leq\sqrt{2}=s_1<2$ establishing the basis of induction.  Assume $\sqrt{2}\leq s_k<2$ for some $k$. Then $s_{k+1}=\sqrt{2s_k}=\sqrt{2}\sqrt{s_k}$ so $\sqrt{2}<\sqrt{2\sqrt{2}}\leq s_{k+1}<2$ and by induction $\sqrt{2}\leq s_k<1$. \\
+The proof that $s_n$ is monotonically increasing is also by induction.  Clearly $\sqrt{2}\approx 1.41\leq\sqrt{2\sqrt{2}}\approx1.68$ establishing the basis of induction.  Assume $s_{k+1}\geq s_k$ for some $k$.  Then $s_{k+2}=\sqrt{2s_{k+1}}\geq\sqrt{2s_k}=s_{k+1}$ by the induction hypothesis.  So by induction $s_n$ is increasing. \\
+Since $s_n$ is bounded and monotonic it converges to a limit $s\in\mathbb{R}$.  Since it is known that $s_{n+1}=\sqrt{2s_n}$, it must be true that
+\begin{align*}
+    \lim_{n\to\infty}s_{n+1}&=\sqrt{2\lim_{n\to\infty}s_n} \\
+    s&=\sqrt{2s} \\
+    s^2-2s&=0 \\
+    s(s-2)&=0 \\
+    s=2 & \text{ or } s=0
+\end{align*}
+$s_n$ cannot converge to 0 since $s_n$ is increasing and begins with a number $s_1>0$ so $s_n$ converges to limit 2.
+\end{Problem}
+\end{document}
